@@ -305,8 +305,7 @@ public class EasyReader implements IReader<EasySocketOptions> {
     // 初始化
     private void init() {
         inputStream = connectionManager.getInputStream();
-        // 没有定义消息协议
-        if (socketOptions.getMessageProtocol() == null) {
+        if (originBuf == null) {
             originBuf = ByteBuffer.allocate(1024 * 4);
         }
     }
